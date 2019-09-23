@@ -1,3 +1,20 @@
+### No-std friendly fork
+
+This fork has been patched to stop the 'std' flag being default. This fixes
+no_std builds where both the main dependency tree, and the dev-dependency tree
+use this crate (see Cargo 5730).
+
+Add this to your Cargo.toml to use:
+
+```
+[patch.crates-io]
+# Use our local byteorder, which has std support disabled
+# This is a work around for Cargo bug 5730
+byteorder = { git = "https://github.com/rust-embedded-community/byteorder" }
+```
+
+### Original Readme
+
 This crate provides convenience methods for encoding and decoding
 numbers in either big-endian or little-endian order.
 
