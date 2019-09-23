@@ -8,7 +8,7 @@ Add this to your Cargo.toml to use:
 
 ```
 [patch.crates-io]
-# Use our local byteorder, which has std support disabled
+# Use a special copy of byteorder, which has std support disabled
 # This is a work around for Cargo bug 5730
 byteorder = { git = "https://github.com/rust-embedded-community/byteorder" }
 ```
